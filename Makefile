@@ -59,7 +59,7 @@ release: bin/tmp/$(EXECUTABLE) $(COMPRESSED_EXECUTABLE_TARGETS)
 	git push && git push --tags
 	bin/tmp/$(EXECUTABLE) release -u $(USER) -r $(EXECUTABLE) \
 		-t $(LAST_TAG) -n $(LAST_TAG) || true
-	$(foreach FILE,$(COMPRESSED_EXECUTABLES),$(UPLOAD_CMD);)
+	$(foreach FILE,$(UNIX_EXECUTABLES),$(UPLOAD_CMD);)
 
 # install and/or update all dependencies, run this from the project directory
 # go get -u ./...
